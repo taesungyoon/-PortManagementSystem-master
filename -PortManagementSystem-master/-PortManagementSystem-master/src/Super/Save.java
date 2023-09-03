@@ -4,7 +4,7 @@ import java.io.*;
 public interface Save {
     default void save(String PortNum, String ObjectID, Object obj) throws IOException{
         try {
-            String projectRoot = System.getProperty();
+            String projectRoot = System.getProperty("-PortManagementSystem-master.dir");
             String path = projectRoot+"/src/" + PortNum + "/Data/" + ObjectID + ".txt";
             System.out.println(path);
 //            File file = new File(path);
