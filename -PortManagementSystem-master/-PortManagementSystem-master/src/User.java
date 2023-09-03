@@ -31,7 +31,7 @@ public class User {
         output.close();
 
     }
-    public void loadAllUsers() throws IOException{
+    public void LoadAllUsers() throws IOException{
         LoadAllAdmins();
         LoadAllPortManagers();
     }
@@ -49,14 +49,14 @@ public class User {
             String path = projectRoot + "/-PortManagementSystem-master/-PortManagementSystem-master/src/";
             BufferedReader reader = new BufferedReader(new FileReader(path + "Data/Users.txt"));
             String line;
-
             while ((line = reader.readLine()) != null) {
                 String[] lines = line.split(" ");
-                if (" ".equals(lines[0]) && role.equals(lines[1])) {
-                    String username = lines[2];
-                    System.out.println(" " + role + "User name: " + username);
+                if (role.equals(lines[0])) { // 역할(role)과 일치하는 사용자만 출력
+                    String username = lines[1];
+                    System.out.println(role + " User name: " + username);
                 }
             }
+            reader.close(); // 파일 읽기 완료 후 리소스 닫기
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

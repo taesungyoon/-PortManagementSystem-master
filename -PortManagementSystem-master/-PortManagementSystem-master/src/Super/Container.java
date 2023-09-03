@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Container implements Serializable, Save{
+    private static final long serialVersionUID = 1L;
     private String ID;
     private String Type;
     private Double Weight;
@@ -28,8 +29,8 @@ public class Container implements Serializable, Save{
         return Weight;
     }
 
-    public boolean InTypes(String Type) {
-        if(Types.contains(Type)){
+    public boolean InTypes(String type) {
+        if(Types.contains(type)){
             return true;
         }
         return false;

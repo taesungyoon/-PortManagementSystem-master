@@ -4,11 +4,13 @@ import Super.Container;
 import Super.Ship;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Port1Ship extends Ship {
+public class Port1Ship extends Ship implements Serializable{
+    private static final long serialVersionUID = 13L;
     private String ID;
-    private Double Fuel;
+    private Double Fuel = 100.0;
     private Double Capacity;
     private ArrayList<Container> Containers;
 
@@ -22,12 +24,12 @@ public class Port1Ship extends Ship {
         this.Capacity = capacity;
         this.Containers = new ArrayList<>();
         save("Port1",this.ID,this);
-
     }
     @Override
-    public void loadContainer(Container container) {
+    public void loadContainer(Container container)throws IOException{
         Containers.add(container);
         CapacityCal(this);
+        save("Port1",this.ID,this);
     }
 
     @Override

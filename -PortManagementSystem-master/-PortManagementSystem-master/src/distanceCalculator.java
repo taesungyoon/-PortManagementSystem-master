@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -33,7 +34,7 @@ class DistanceCalculator implements OperationProcessor {
 }
 
 class Calculator {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         PortManager control = new PortManager();
         control.start();
         control.closeScanner();

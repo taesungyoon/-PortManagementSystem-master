@@ -5,6 +5,7 @@ import Super.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 
-public class Port1Trip extends Trip{
+public class Port1Trip extends Trip {
     private String ID;
     private LocalDate departureDate;
     private LocalDate arrivalDate;

@@ -53,25 +53,18 @@ public class PortManager {
 
 
         public static void main(String[] args) throws IOException {
-            Port1Container port1Container = new Port1Container("C-001","dry storage",500.0);
-
-            // Distance Calculate
-            PortManager manager = new PortManager();
-            manager.start();
-            manager.closeScanner();
-
 
             // Port1 객체 생성 및 테스트
-            Port1 port1 = new Port1("호치민 항구", "p0001", 10.7688, 106.6958, 1000.0, true);
+            Port1 port1 = new Port1(10.7688, 106.6958, 1000.0, true);
 
             // Port1Container 객체 생성 및 테스트
+//            Port1Container container1 = new Port1Container("C-001", "dry storage", 500.0);
+//            Port1Container container2 = new Port1Container("C-002", "liquid", 800.0);
             Port1Container container1 = new Port1Container("C-001", "dry storage", 500.0);
-            Port1Container container2 = new Port1Container("C-002", "liquid", 800.0);
-
+            System.out.println(container1);
             // Port1Ship 객체 생성 및 테스트
             Port1Ship ship1 = new Port1Ship("S-001", 2000.0);
             ship1.loadContainer(container1);
-            ship1.loadContainer(container2);
 
             // Port1Trip 객체 생성 및 테스트
             Port1Trip trip1 = new Port1Trip("T-001", LocalDate.now(), LocalDate.now().plusDays(7), ship1, port1, port1);
@@ -79,19 +72,20 @@ public class PortManager {
             // Port1Truck 객체 생성 및 테스트
             Port1Truck truck1 = new Port1Truck("T-001", 500.0);
             truck1.loadContainer(container1);
-//
-//             User 객체 생성 및 테스트
+
+            // User 객체 생성 및 테스트
             User user1 = new User("Admin", "admin_user", "admin_password");
             User user2 = new User("PortManager", "manager_user", "manager_password");
 
-//             사용자 정보 로드 및 출력
-            user1.loadAllUsers();
-            user2.loadAllUsers();
+            // 사용자 정보 로드 및 출력
+            user1.LoadAllUsers();
+            user2.LoadAllUsers();
 
             // 모든 항구 파일 출력
             port1.printAllVehicles();
 
             // 모든 여행 내용 출력
             user1.ListAllTrips();
+            port1.printAllContainers();
         }
     }

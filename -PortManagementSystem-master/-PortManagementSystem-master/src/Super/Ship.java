@@ -1,9 +1,11 @@
 package Super;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Ship extends Vehicle implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String ID;
     private Double fuel;
     private Double capacity;
@@ -20,7 +22,7 @@ public class Ship extends Vehicle implements Serializable {
         this.capacity = capacity;
     }
     @Override
-    public void loadContainer(Container container) {
+    public void loadContainer(Container container) throws IOException {
         CapacityCal(this);
         containers.add(container);
     }

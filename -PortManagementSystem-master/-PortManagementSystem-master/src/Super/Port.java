@@ -2,6 +2,7 @@ package Super;
 import java.io.*;
 import java.util.*;
 public class Port implements Serializable , Save {
+    private static final long serialVersionUID = 1L;
     private String Name;
     private String ID;
     private Double StoringCapacity;
@@ -14,9 +15,7 @@ public class Port implements Serializable , Save {
         StoringCapacity = null;
 
     }
-    public Port(String Name, String ID, Double StoringCapacity, Double Longtitude, Double Latitude, boolean LandingAbility){
-        this.Name = Name;
-        this.ID = ID;
+    public Port( Double StoringCapacity, Double Longtitude, Double Latitude, boolean LandingAbility){
         this.LandingAbility = LandingAbility;
         this.Longtitude = Longtitude;
         this.Latitude = Latitude;
@@ -31,7 +30,7 @@ public class Port implements Serializable , Save {
             if (f.isFile() && name.startsWith(startWord)) {
                 try (ObjectInputStream input = new ObjectInputStream(new FileInputStream(f))) {
                     Object obj = input.readObject();
-                    results.add(obj);
+                    results.add(obj.toString());
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ClassNotFoundException e) {
