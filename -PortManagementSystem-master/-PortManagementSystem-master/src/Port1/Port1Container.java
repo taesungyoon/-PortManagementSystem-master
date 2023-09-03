@@ -53,13 +53,6 @@ public class Port1Container extends Container {
         return super.InTypes(Type);
     }
 
-    Port1Container(String ID, String Type, Double Weight,Double consumptionFuel){
-        this.ID = ID;
-        this.Type = Type;
-        this.Weight = Weight;
-        this.consumptionFuel = consumptionFuel;
-    }
-
     public void SavePort1Container(String filepath, String ObjectID, Container container ){
 
     }

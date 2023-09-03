@@ -31,7 +31,7 @@ public class Port1Trip extends Trip{
         departurePort = null;
         arrivalPort = null;
     }
-    public Port1Trip(String ID, LocalDate DepartureDate, LocalDate ArrivalDate, Vehicle Vehicle, Port DeparturePort, Port ArrivalPort){
+    public Port1Trip(String ID, LocalDate DepartureDate, LocalDate ArrivalDate, Vehicle Vehicle, Port DeparturePort, Port ArrivalPort) throws IOException {
         this.ID = ID;
         this.departureDate = DepartureDate;
         this.arrivalDate = ArrivalDate;
@@ -39,11 +39,12 @@ public class Port1Trip extends Trip{
         this.departurePort = DeparturePort;
         this.arrivalPort = ArrivalPort;
         this.Containers = Vehicle.Containers;
-        Port1MoveFile(""+vehicleID,""+ArrivalPort);
-        for(Container container :Containers){
-            String ContainerID = container.getID();
-            Port1MoveFile(""+ContainerID+".txt",""+ArrivalPort);
-        }
+//        Port1MoveFile(""+vehicleID,""+ArrivalPort);
+//        for(Container container :Containers){
+//            String ContainerID = container.getID();
+//            Port1MoveFile(""+ContainerID+".txt",""+ArrivalPort);
+//        }
+        this.save();
     }
 
     @Override
@@ -60,13 +61,15 @@ public class Port1Trip extends Trip{
                 '}';
     }
     public void Port1MoveFile(String fileName, String ArrivalPortName){
-        moveFile("Port1",fileName,ArrivalPortName);
+        moveFile("Port1",fileName,ArrivalPortName); // String이아니라 port를 받도록 바꿔야됨
     }
 
 
     @Override
     public void save() throws IOException {
-        PrintWriter output = new PrintWriter(new FileWriter("./src/Port1/Data/History.txt", true));
+        String projectRoot = System.getProperty("user.dir");
+        String path = projectRoot+"/-PortManagementSystem-master/-PortManagementSystem-master";
+        PrintWriter output = new PrintWriter(new FileWriter(path+"/src/Port1/Data/History.txt", true));
         output.println(this.ID+":"+this.vehicleID+":"+this.Status+":"+departureDate+":"+this.arrivalDate+":"+this.departurePort+":"+this.arrivalPort+":"+this.Containers);
         output.flush();
         output.close();
@@ -76,17 +79,4 @@ public class Port1Trip extends Trip{
         return Containers;
     }
 
-    public void moveFile(String portName, String fileName, String ArrivalPortName){
-        try {
-            Path filePath = Paths.get("./src/"+portName+"/Data/"+fileName);
-            Path filePathToMove = Paths.get("./src/"+ArrivalPortName+"/Data/"+fileName);
-            if (Files.exists(filePath)) {
-                Files.move(filePath, filePathToMove);
-            } else {
-                System.err.println("The file does not exist: " + filePath);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

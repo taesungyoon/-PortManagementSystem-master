@@ -1,8 +1,9 @@
 package Super;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Ship extends Vehicle {
+public class Ship extends Vehicle implements Serializable {
     private String ID;
     private Double fuel;
     private Double capacity;

@@ -34,7 +34,9 @@ public class Port1 extends Port{
     }
 
     public String Port1PrintAllFilesStartWith(String startWord){
-        return printAllFilesStartWith(startWord,"./src/Port1/Data");
+        String projectRoot = System.getProperty("user.dir");
+        String path = projectRoot+"/-PortManagementSystem-master/-PortManagementSystem-master/src/";
+        return printAllFilesStartWith(startWord,path+"Port1/Data");
     }
     public String printAllTrucks(){
         return Port1PrintAllFilesStartWith("T-");

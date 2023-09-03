@@ -36,7 +36,6 @@ public abstract class Trip {
         this.DeparturePort = DeparturePort;
         this.ArrivalPort = ArrivalPort;
         this.Containers = Vehicle.Containers;
-
     }
 
     @Override
@@ -60,9 +59,12 @@ public abstract class Trip {
         output.close();
     }
     public void moveFile(String portName, String fileName, String ArrivalPortName){
+        String projectRoot = System.getProperty("user.dir");
+        String departurePath = projectRoot+"/-PortManagementSystem-master/-PortManagementSystem-master/src/" + portName + "/Data/" + fileName;
+        String arrivalPath = projectRoot+"/-PortManagementSystem-master/-PortManagementSystem-master/src/" + ArrivalPortName + "/Data/" + fileName;
         try {
-            Path filePath = Paths.get("./src/"+portName+"/Data/"+fileName);
-            Path filePathToMove = Paths.get("./src/+"+ArrivalPortName+"/Data/"+fileName);
+            Path filePath = Paths.get(departurePath);
+            Path filePathToMove = Paths.get(arrivalPath);
             Files.move(filePath, filePathToMove);
         } catch (IOException e) {
             e.printStackTrace();

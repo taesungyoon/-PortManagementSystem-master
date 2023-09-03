@@ -21,7 +21,7 @@ public class Port1Ship extends Ship {
         this.ID = ID;
         this.Capacity = capacity;
         this.Containers = new ArrayList<>();
-        save("Port1",""+this.ID,this);
+        save("Port1",this.ID,this);
 
     }
     @Override

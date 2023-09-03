@@ -18,7 +18,7 @@ public class Port1Truck extends Truck {
         this.ID = ID;
         this.Capacity = capacity;
         this.Containers = new ArrayList<>();
-        save("./src/Port1/Data",""+this.ID,this);
+        save("Port1",this.ID,this);
     }    @Override
     public Double FuelConsumption(Double consumption) {
         return this.FuelConsumption(consumption);

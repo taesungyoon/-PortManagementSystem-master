@@ -23,45 +23,60 @@ public class User {
     }
 
     private void SaveUser() throws IOException {
-        PrintWriter output = new PrintWriter(new FileWriter("./src/Data/Users.txt", true));
+        String projectRoot = System.getProperty("user.dir");
+        String path = projectRoot+"/-PortManagementSystem-master/-PortManagementSystem-master/src/";
+        PrintWriter output = new PrintWriter(new FileWriter(path+"Data/Users.txt", true));
         output.println(this.role + " "+ this.userName+ " "+ this.password);
         output.flush();
         output.close();
 
     }
-    public void LoadAllUsers() throws IOException {
+    public void loadAllUsers() throws IOException{
         LoadAllAdmins();
         LoadAllPortManagers();
     }
     public void LoadAllAdmins() throws IOException {
         ListByRoles("Admin");
     }
-    public void  LoadAllPortManagers() throws IOException{
+
+    public void LoadAllPortManagers() throws IOException {
         ListByRoles("PortManager");
     }
-    public void ListByRoles(String role) throws IOException{
+
+    public void ListByRoles(String role) throws IOException {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("./src/Data/Users.txt"));
+            String projectRoot = System.getProperty("user.dir");
+            String path = projectRoot + "/-PortManagementSystem-master/-PortManagementSystem-master/src/";
+            BufferedReader reader = new BufferedReader(new FileReader(path + "Data/Users.txt"));
             String line;
 
             while ((line = reader.readLine()) != null) {
                 String[] lines = line.split(" ");
-                if (lines[0] == " "+role) {
-                    String username = lines[1];
-                    System.out.println(" "+role+ "User name: " + username);
+                if (" ".equals(lines[0]) && role.equals(lines[1])) {
+                    String username = lines[2];
+                    System.out.println(" " + role + "User name: " + username);
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    public void ListAllTrips() throws IOException{
+
+    public void ListAllTrips() throws IOException {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("src/Port1/Data/Histoy.txt"));
-            String line = reader.readLine();
-            while (line != null) {
-                String[] lines = line.split(":");
-                System.out.println(line);
+            String projectRoot = System.getProperty("user.dir");
+            String path = projectRoot + "/-PortManagementSystem-master/-PortManagementSystem-master/src/" + "Port1/Data/History.txt";
+            System.out.println(path);
+            try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+                String line;
+                if ((line = reader.readLine()) == null) {
+                    System.out.println("It is empty");
+                }
+                while (line != null) {
+                    String[] lines = line.split(":");
+                    System.out.println(line);
+                    line = reader.readLine(); // 다음 줄 읽기
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
