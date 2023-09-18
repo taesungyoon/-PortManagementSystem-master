@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="becb1472-af76-4a64-bac1-ccd50631ed7a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asdaskfasf.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Admins.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Data/PortManagers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Container.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/DataInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Port.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/PortDataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/PortLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Save.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Ship.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Trip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Truck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Super/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/Users/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/Users/PortManager/PortDataSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/Users/PortManager/PortManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/Users/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/d.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/operationProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
